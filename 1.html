@@ -8,13 +8,22 @@
         function button1Pressed(){
             window.alert('Hello world!!')
         }
+
+        function button2Pressed(){
+            document.getElementById("result").innerHTML='hello world!!';
+        }
+
+        function button3Pressed(){
+            document.getElementById("result").innerHTML='';
+        }
+
     </script>
 </head>
 
 <body>
     <button onclick="button1Pressed()">X</button>
     <button onclick="button2Pressed()">Y</button>
-    <button onclick="button3Pressed()">Z</button>>
+    <button onclick="button3Pressed()">Z</button>
     <hr>
     <p id="result"></p>
 </body>
