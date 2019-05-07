@@ -4,11 +4,12 @@
 <head>
     <meta charset="utf-8">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script>
-        var t1 = Number(document.getElementById("tf1").value);
-        var t2 = Number(document.getElementById("tf2").value);
-        var t3 = Number(document.getElementById("tf3").value);
-        var t4 = Number(document.getElementById("tf4").value);
+    <!-- <script>
+        // var t1 = document.getElementById("tf1").value;
+        // var t2 = document.getElementById("tf2").value;
+        // var t3 = document.getElementById("tf3").value;
+        // var t4 = document.getElementById("tf4").value;
+        // var t5 = document.getElementById("tf5").value;
 
         function button1Pressed() {
             var random1 = Math.random();
@@ -38,14 +39,18 @@
             } else {
                 document.getElementById("tf4").value = 1;
             }
-
         }
 
         function button2Pressed() {
-            document.getElementById("result").innerHTML = 'hello world!!';
+            document.getElementById("tf6").value = Number(document.getElementById("tf1").value) * 8 + Number(document.getElementById("tf2").value) * 4 + Number(document.getElementById("tf3").value) * 2 + Number(document.getElementById("tf4").value);
+            if (Number(document.getElementById("tf5").value) == Number(document.getElementById("tf6").value)) {
+                document.getElementById("result").innerHTML = '<p>正解です</p>'
+            } else {
+                document.getElementById("result").innerHTML = '<p>不正解です</p>'
+            }
         }
 
-    </script>
+    </script> -->
 </head>
 
 <body>
@@ -60,7 +65,57 @@
     <br>
     <button onclick="button2Pressed()">答え合わせ</button>
     <hr>
+    <input id='tf6' type='text'>
     <p id="result"></p>
 </body>
+
+<script>
+    // var t1 = document.getElementById("tf1");
+    // var t2 = document.getElementById("tf2");
+    // var t3 = document.getElementById("tf3");
+    // var t4 = document.getElementById("tf4");
+    // var t5 = document.getElementById("tf5");
+
+    function button1Pressed() {
+        var random1 = Math.random();
+        if (random1 > 0.5) {
+            document.getElementById("tf1").value = 0;
+        } else {
+            document.getElementById("tf1").value = 1;
+        }
+
+        var random2 = Math.random();
+        if (random2 > 0.5) {
+            document.getElementById("tf2").value = 0;
+        } else {
+            document.getElementById("tf2").value = 1;
+        }
+
+        var random3 = Math.random();
+        if (random3 > 0.5) {
+            document.getElementById("tf3").value = 0;
+        } else {
+            document.getElementById("tf3").value = 1;
+        }
+
+        var random4 = Math.random();
+        if (random4 > 0.5) {
+            document.getElementById("tf4").value = 0;
+        } else {
+            document.getElementById("tf4").value = 1;
+        }
+        // alert(t1.value);
+    }
+
+    function button2Pressed() {
+        document.getElementById("tf6").value = Number(document.getElementById("tf1").value) * 8 + Number(document.getElementById("tf2").value) * 4 + Number(document.getElementById("tf3").value) * 2 + Number(document.getElementById("tf4").value);
+        if (Number(document.getElementById("tf5").value) == Number(document.getElementById("tf6").value)) {
+            document.getElementById("result").innerHTML = '<p>正解です</p>'
+        } else {
+            document.getElementById("result").innerHTML = '<p>不正解です</p>'
+        }
+    }
+
+</script>
 
 </html>
