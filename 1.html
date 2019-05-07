@@ -5,25 +5,64 @@
     <meta charset="utf-8">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script>
-        function button1Pressed(){
-            window.alert('Hello world!!')
+        var t1 = Number(document.getElementById("tf1").value);
+        var t2 = Number(document.getElementById("tf2").value);
+        var t3 = Number(document.getElementById("tf3").value);
+        var t4 = Number(document.getElementById("tf4").value);
+
+        function button1Pressed() {
+            var random1 = random();
+            if (random1 > 0.5) {
+                document.getElementById("tf1").innerHTML = 0;
+            } else {
+                document.getElementById("tf1").innerHTML = 1;
+            }
+
+            var random2 = random();
+            if (random2 > 0.5) {
+                document.getElementById("tf2").innerHTML = 0;
+            } else {
+                document.getElementById("tf2").innerHTML = 1;
+            }
+
+            var random3 = random();
+            if (random3 > 0.5) {
+                document.getElementById("tf3").innerHTML = 0;
+            } else {
+                document.getElementById("tf3").innerHTML = 1;
+            }
+
+            var random4 = random();
+            if (random4 > 0.5) {
+                document.getElementById("tf4").innerHTML = 0;
+            } else {
+                document.getElementById("tf4").innerHTML = 1;
+            }
+
         }
 
-        function button2Pressed(){
-            document.getElementById("result").innerHTML='hello world!!';
+        function button2Pressed() {
+            document.getElementById("result").innerHTML = 'hello world!!';
         }
 
-        function button3Pressed(){
-            document.getElementById("result").innerHTML='';
+        function button3Pressed() {
+            document.getElementById("result").innerHTML = '';
         }
 
     </script>
 </head>
 
 <body>
-    <button onclick="button1Pressed()">X</button>
-    <button onclick="button2Pressed()">Y</button>
-    <button onclick="button3Pressed()">Z</button>
+    <input id='tf1' type='text'>
+    <input id='tf2' type='text'>
+    <input id='tf3' type='text'>
+    <input id='tf4' type='text'>
+    <br>
+    <button onclick="button1Pressed()">製成</button>
+    <br>
+    <input id='tf5' type='text'>
+    <br>
+    <button onclick="button2Pressed()">答え合わせ</button>
     <hr>
     <p id="result"></p>
 </body>
