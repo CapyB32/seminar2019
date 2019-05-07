@@ -5,12 +5,15 @@
     <meta charset="utf-8">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script>
+        var random=0;
+
         function button1Pressed(){
-            window.alert('Hello world!!')
+            var rand=Math.floor(random*100);
+            window.alert(rand);
         }
 
         function button2Pressed(){
-            var random=Math.random();
+            random=Math.random();
             if(random<0.1){
                 document.getElementById("result").innerHTML='大吉';
             }else if(random<0.3){
