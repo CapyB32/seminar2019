@@ -10,7 +10,16 @@
         }
 
         function button2Pressed(){
-            document.getElementById("result").innerHTML='hello world!!';
+            var random=Math.random();
+            if(random<0.1){
+                document.getElementById("result").innerHTML='大吉';
+            }else if(random<0.3){
+                document.getElementById("result").innerHTML='中吉';
+            }else if(random<0.5){
+                document.getElementById("result").innerHTML='小吉';
+            }else{
+                document.getElementById("result").innerHTML='凶';
+            }
         }
 
         function button3Pressed(){
