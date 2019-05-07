@@ -18,15 +18,21 @@
             document.getElementById("result").innerHTML='';
         }
 
+        function button4Pressed(){
+            var x = document.getElementById("tf1").value;
+            var y = document.getElementById("tf2").value;
+            document.getElementById("tf3").value=Number(x)+Number(y);
+        }
+
     </script>
 </head>
 
 <body>
-    <input type='text'>
+    <input id='tf1' type='text'>
     <button onclick="button4Pressed()">+</button>
-    <input type='text'>
+    <input id='tf2' type='text'>
     =
-    <input type='text'>
+    <input id='tf3' type='text'>
 
     <button onclick="button1Pressed()">X</button>
     <button onclick="button2Pressed()">Y</button>
