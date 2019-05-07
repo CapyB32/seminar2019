@@ -11,42 +11,38 @@
         var t4 = Number(document.getElementById("tf4").value);
 
         function button1Pressed() {
-            var random1 = random();
+            var random1 = Math.random();
             if (random1 > 0.5) {
-                document.getElementById("tf1").innerHTML = 0;
+                document.getElementById("tf1").value = 0;
             } else {
-                document.getElementById("tf1").innerHTML = 1;
+                document.getElementById("tf1").value = 1;
             }
 
-            var random2 = random();
+            var random2 = Math.random();
             if (random2 > 0.5) {
-                document.getElementById("tf2").innerHTML = 0;
+                document.getElementById("tf2").value = 0;
             } else {
-                document.getElementById("tf2").innerHTML = 1;
+                document.getElementById("tf2").value = 1;
             }
 
-            var random3 = random();
+            var random3 = Math.random();
             if (random3 > 0.5) {
-                document.getElementById("tf3").innerHTML = 0;
+                document.getElementById("tf3").value = 0;
             } else {
-                document.getElementById("tf3").innerHTML = 1;
+                document.getElementById("tf3").value = 1;
             }
 
-            var random4 = random();
+            var random4 = Math.random();
             if (random4 > 0.5) {
-                document.getElementById("tf4").innerHTML = 0;
+                document.getElementById("tf4").value = 0;
             } else {
-                document.getElementById("tf4").innerHTML = 1;
+                document.getElementById("tf4").value = 1;
             }
 
         }
 
         function button2Pressed() {
             document.getElementById("result").innerHTML = 'hello world!!';
-        }
-
-        function button3Pressed() {
-            document.getElementById("result").innerHTML = '';
         }
 
     </script>
