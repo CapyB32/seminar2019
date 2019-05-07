@@ -7,24 +7,30 @@
     <script>
         var random=0;
 
+        //パーセント表示
         function button1Pressed(){
             var rand=Math.floor(random*100);
             window.alert(rand);
         }
-
+        
+        //おみくじ本体
         function button2Pressed(){
             random=Math.random();
+            var result;
             if(random<0.1){
-                document.getElementById("result").innerHTML='大吉';
+                result='大吉';
             }else if(random<0.3){
-                document.getElementById("result").innerHTML='中吉';
+                result='中吉';
             }else if(random<0.5){
-                document.getElementById("result").innerHTML='小吉';
+                result='小吉';
             }else{
-                document.getElementById("result").innerHTML='凶';
+                result='凶';
             }
+
+            document.getElementById("result").innerHTML=result;
         }
 
+        //白紙に戻す
         function button3Pressed(){
             document.getElementById("result").innerHTML='';
         }
