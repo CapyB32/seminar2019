@@ -7,18 +7,29 @@
 </head>
 
 <body>
-    <button onclick="x()">100x100</button>
+    <p>n</p>
+    <input id='n'></input>
+    <br>
+    <p>m</p>
+    <input id='m'></input>
+    <br>
+    <button onclick="x()">n*m</button>
+    <br>
     <div id='x'></div>
     <hr>
 </body>
 
 <script>
     function x() {
+        var n = document.getElementById('n').value;
+        n = parseInt(n);
+        var m = document.getElementById('m').value;
+        m = parseInt(m);
         var text = "";
         text = "<table border='1'>" + text;
-        for (var i = 0; i < 100; i++) {
+        for (var i = 0; i < n; i++) {
             text = text + "<tr>";
-            for (var j = 0; j < 100; j++) {
+            for (var j = 0; j < m; j++) {
                 text = text + "<th>" + ((i + 1) * (j + 1)) + "</th>";
             }
             text = text + "</tr>"
