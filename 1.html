@@ -4,20 +4,18 @@
 <head>
     <meta charset="utf-8">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-
 </head>
 
 <body>
     <button onclick="x()">100x100</button>
     <div id='x'></div>
     <hr>
-    <p id="result"></p>
 </body>
 
 <script>
     function x() {
         var text = "";
-        text = "<table>" + text;
+        text = "<table border='1'>" + text;
         for (var i = 0; i < 100; i++) {
             text = text + "<tr>";
             for (var j = 0; j < 100; j++) {
