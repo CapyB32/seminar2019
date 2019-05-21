@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <button onclick="x()">x</button>
+    <button onclick="x()">100x100</button>
     <div id='x'></div>
     <hr>
     <p id="result"></p>
@@ -18,9 +18,9 @@
     function x() {
         var text = "";
         text = "<table>" + text;
-        for (var i = 0; i < 9; i++) {
+        for (var i = 0; i < 100; i++) {
             text = text + "<tr>";
-            for (var j = 0; j < 9; j++) {
+            for (var j = 0; j < 100; j++) {
                 text = text + "<th>" + ((i + 1) * (j + 1)) + "</th>";
             }
             text = text + "</tr>"
