@@ -5,27 +5,39 @@
     <meta charset="utf-8">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script>
-        function button1Pressed(){
+        function button1Pressed() {
             window.alert('Hello world!!')
         }
 
-        function button2Pressed(){
-            document.getElementById("result").innerHTML='hello world!!';
+        function button2Pressed() {
+            document.getElementById("result").innerHTML = 'hello world!!';
         }
 
-        function button3Pressed(){
-            document.getElementById("result").innerHTML='';
+        function button3Pressed() {
+            document.getElementById("result").innerHTML = '';
         }
 
     </script>
 </head>
 
 <body>
-    <button onclick="button1Pressed()">X</button>
-    <button onclick="button2Pressed()">Y</button>
-    <button onclick="button3Pressed()">Z</button>
+    <button onclick="x()">x</button>
+    <div id='x'></div>
     <hr>
     <p id="result"></p>
 </body>
+
+<script>
+    function x() {
+        var text = "";
+        text = "<ul>" + text;
+        for (var i = 0; i < 3; i++) {
+            text = text + "<li>" + (i + 1) + "</li>";
+        }
+        text = text + "</ul>";
+        document.getElementById('x').innerHTML = text;
+    }
+
+</script>
 
 </html>
