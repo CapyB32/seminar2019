@@ -29,7 +29,6 @@
     function DisplayTweet(ARRAY){
         var text = "";
         text = "<table border = '1'>" + text;
-        console.log(ARRAY[0].tweet);
         text = text + "<tr>" + "<td>" + "sid" + "</td>"+ "<td>" + "tweet" + "</td>" + "<td>" + "date" + "</td>" + "</tr>";
         for(var i=0;i<ARRAY.length;i++){
             text = text + "<tr>" + "<td>" + ARRAY[i].sid + "</td>"+ "<td>" + ARRAY[i].tweet + "</td>" + "<td>" + ARRAY[i].date + "</td>" + "</tr>";
