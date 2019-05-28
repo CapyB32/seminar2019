@@ -29,11 +29,17 @@
 
 <script>
     function x() {
+        var Students={
+            lname:'Mathuzawa',
+            gender:'male',
+            age:40
+        };
+
         var text = "";
         text = "<ul>" + text;
-        for (var i = 0; i < 3; i++) {
-            text = text + "<li>" + (i + 1) + "</li>";
-        }
+        text = text + "<li>" + Students.lname + "</li>";
+        text = text + "<li>" + Students.gender + "</li>";
+        text = text + "<li>" + Students.age + "</li>";
         text = text + "</ul>";
         document.getElementById('x').innerHTML = text;
     }
