@@ -4,23 +4,11 @@
 <head>
     <meta charset="utf-8">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script>
-        function button1Pressed() {
-            window.alert('Hello world!!')
-        }
-
-        function button2Pressed() {
-            document.getElementById("result").innerHTML = 'hello world!!';
-        }
-
-        function button3Pressed() {
-            document.getElementById("result").innerHTML = '';
-        }
-
-    </script>
 </head>
 
 <body>
+    <input id='y'></input>
+    <input id='z'></input>
     <button onclick="x()">x</button>
     <div id='x'></div>
     <hr>
@@ -28,22 +16,35 @@
 </body>
 
 <script>
+    var tweetBox=[];
+
     function x() {
-        var Students={
-            lname:'Mathuzawa',
-            gender:'male',
-            age:40
-        };
+
+        var yy = document.getElementById('y').value;
+        var zz = document.getElementById('z').value;
+
+        Tweet(yy,zz);
 
         var text = "";
-        text = "<ul>" + text;
-        text = text + "<li>" + Students.lname + "</li>";
-        text = text + "<li>" + Students.gender + "</li>";
-        text = text + "<li>" + Students.age + "</li>";
-        text = text + "</ul>";
+        text = "<table>" + text;
+        console.log(tweetBox[0].tweet);
+        text = text + "<tr>" + "<td>" + "sid" + "</td>"+ "<td>" + "tweet" + "</td>" + "<td>" + "date" + "</td>" + "</tr>";
+        for(var i=0;i<tweetBox.length;i++){
+            text = text + "<tr>" + "<td>" + tweetBox[i].sid + "</td>"+ "<td>" + tweetBox[i].tweet + "</td>" + "<td>" + tweetBox[i].date + "</td>" + "</tr>";
+        }
+        text = text + "</table>";
         document.getElementById('x').innerHTML = text;
     }
 
+    function Tweet(SID,TWEET){
+        var content={
+            sid:SID,
+            tweet:TWEET,
+            date:201905281800
+        };
+        tweetBox.push(content);
+    }
+    
 </script>
 
 </html>
