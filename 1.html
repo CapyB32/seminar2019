@@ -19,18 +19,20 @@
     var tweetBox=[];
 
     function x() {
-
         var yy = document.getElementById('y').value;
         var zz = document.getElementById('z').value;
-
         Tweet(yy,zz);
+        DisplayTweet(tweetBox);
 
+    }
+
+    function DisplayTweet(ARRAY){
         var text = "";
         text = "<table>" + text;
-        console.log(tweetBox[0].tweet);
+        console.log(ARRAY[0].tweet);
         text = text + "<tr>" + "<td>" + "sid" + "</td>"+ "<td>" + "tweet" + "</td>" + "<td>" + "date" + "</td>" + "</tr>";
-        for(var i=0;i<tweetBox.length;i++){
-            text = text + "<tr>" + "<td>" + tweetBox[i].sid + "</td>"+ "<td>" + tweetBox[i].tweet + "</td>" + "<td>" + tweetBox[i].date + "</td>" + "</tr>";
+        for(var i=0;i<ARRAY.length;i++){
+            text = text + "<tr>" + "<td>" + ARRAY[i].sid + "</td>"+ "<td>" + ARRAY[i].tweet + "</td>" + "<td>" + ARRAY[i].date + "</td>" + "</tr>";
         }
         text = text + "</table>";
         document.getElementById('x').innerHTML = text;
@@ -40,7 +42,7 @@
         var content={
             sid:SID,
             tweet:TWEET,
-            date:201905281800
+            date:new Date()
         };
         tweetBox.push(content);
     }
