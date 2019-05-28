@@ -28,11 +28,16 @@
 </body>
 
 <script>
+
     function x() {
+        var fruit=[];
+        fruit.push('RINOGO');
+        fruit.push('MIKAN');
+        fruit.push('BUDOU');
         var text = "";
         text = "<ul>" + text;
         for (var i = 0; i < 3; i++) {
-            text = text + "<li>" + (i + 1) + "</li>";
+            text = text + "<li>" + fruit[i] + "</li>";
         }
         text = text + "</ul>";
         document.getElementById('x').innerHTML = text;
