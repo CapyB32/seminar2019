@@ -7,9 +7,9 @@
 </head>
 
 <body>
-    <input id='y'></input>
-    <input id='z'></input>
-    <button onclick="x()">x</button>
+    StudentID<input id='y'></input><br>
+    Tweet    <input id='z'></input><br>
+    <button onclick="x()">投稿</button>
     <div id='x'></div>
     <hr>
     <p id="result"></p>
@@ -28,7 +28,7 @@
 
     function DisplayTweet(ARRAY){
         var text = "";
-        text = "<table>" + text;
+        text = "<table border = '1'>" + text;
         console.log(ARRAY[0].tweet);
         text = text + "<tr>" + "<td>" + "sid" + "</td>"+ "<td>" + "tweet" + "</td>" + "<td>" + "date" + "</td>" + "</tr>";
         for(var i=0;i<ARRAY.length;i++){
