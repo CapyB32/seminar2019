@@ -19,6 +19,15 @@
 
             var objects = await connect(query);
             console.log(objects);
+
+            var text = '';
+            text = text + '<tr border="1">';
+            for (var i = 0; i < objects.length; i++) {
+                text = text + '<th>' + objects[i].name + '</th>' + '<th>' + objects[i].tweet + '</th>' + '<th>' + objects[i].time + '</th>';
+            }
+            text = text + '</tr>';
+
+            document.getElementById('result').innerHTML = text;
         }
 
         function connect(query) {
@@ -34,9 +43,9 @@
 
 <body>
     <h1>Tweets</h1>
-    <input id="tf1" type="textfield" value="t23921">ログイン名
+    <input id="tf1" type="textfield" value="a8117047">ログイン名
     <br>
-    <input id="tf2" type="password">パスワード
+    <input id="tf2" type="password" value="73shiraki">パスワード
     <br>
     <button onclick="button1Pressed()">X</button>
     <hr>
