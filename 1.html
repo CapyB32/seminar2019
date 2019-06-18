@@ -23,9 +23,9 @@
     function buttonAPressed() {
         count++;
         if (count % 2 === 1) {
-            timer = setInterval(tick, 1000);
+            start();
         } else {
-            clearInterval(timer);
+            stop();
         }
 
     }
@@ -37,18 +37,28 @@
 
     function buttonBPressed() {
         if (count % 2 === 1) {
-            serve = time;
-            document.getElementById('result').innerHTML = serve;
+            lap();
         } else {
-            time = 0;
-            document.getElementById('x').innerHTML = time;
+            reset();
         }
     }
 
-    function buttonCPressed() {
+    function start() {
+        timer = setInterval(tick, 1000);
+    }
+
+    function stop() {
         clearInterval(timer);
+    }
+
+    function reset() {
         time = 0;
         document.getElementById('x').innerHTML = time;
+    }
+
+    function lap() {
+        serve = time;
+        document.getElementById('result').innerHTML = serve;
     }
 
 </script>
