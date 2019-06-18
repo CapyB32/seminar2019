@@ -4,29 +4,40 @@
 <head>
     <meta charset="utf-8">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script>
-        function button1Pressed() {
-            window.alert('Hello world!!')
-        }
-
-        function button2Pressed() {
-            document.getElementById("result").innerHTML = 'hello world!!';
-        }
-
-        function button3Pressed() {
-            document.getElementById("result").innerHTML = '';
-        }
-
-    </script>
 </head>
 
 <body>
-    <input></input>
+    <p id='x'>0</p>
     <br>
-    <button onclick="button1Pressed()">A</button>
-    <button onclick="button2Pressed()">B</button>
+    <button onclick="buttonAPressed()">A</button>
+    <button onclick="buttonBPressed()">B</button>
+    <button onclick="buttonCPressed()">C</button>
     <hr>
     <p id="result"></p>
 </body>
+
+<script>
+    var time = 0;
+    var timer;
+    function buttonAPressed() {
+        timer = setInterval(tick, 1000);
+    }
+
+    function tick() {
+        time++;
+        document.getElementById('x').innerHTML = time;
+    }
+
+    function buttonBPressed() {
+        clearInterval(timer);
+    }
+
+    function buttonCPressed() {
+        clearInterval(timer);
+        time = 0;
+        document.getElementById('x').innerHTML = time;
+    }
+
+</script>
 
 </html>
