@@ -19,6 +19,7 @@
     var time = 0;
     var timer;
     var count = 0;
+    var serve = 0;
     function buttonAPressed() {
         count++;
         if (count % 2 === 1) {
@@ -35,7 +36,13 @@
     }
 
     function buttonBPressed() {
-        clearInterval(timer);
+        if (count % 2 === 1) {
+            serve = time;
+            document.getElementById('result').innerHTML = serve;
+        } else {
+            time = 0;
+            document.getElementById('x').innerHTML = time;
+        }
     }
 
     function buttonCPressed() {
