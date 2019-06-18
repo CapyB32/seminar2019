@@ -11,7 +11,6 @@
     <br>
     <button onclick="buttonAPressed()">A</button>
     <button onclick="buttonBPressed()">B</button>
-    <button onclick="buttonCPressed()">C</button>
     <hr>
     <p id="result"></p>
 </body>
@@ -19,8 +18,15 @@
 <script>
     var time = 0;
     var timer;
+    var count = 0;
     function buttonAPressed() {
-        timer = setInterval(tick, 1000);
+        count++;
+        if (count % 2 === 1) {
+            timer = setInterval(tick, 1000);
+        } else {
+            clearInterval(timer);
+        }
+
     }
 
     function tick() {
