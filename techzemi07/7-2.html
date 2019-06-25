@@ -9,6 +9,9 @@
             var userid = document.getElementById('tf1').value;
             var password = document.getElementById('tf2').value;
 
+            window.localStorage.setItem('userid', userid);
+            window.localStorage.setItem('password', password);
+
             var sql = 'show tables';
             var query = {
                 db: 'creco18',
@@ -21,7 +24,7 @@
             if (objects.result && objects.result === 'fail') {
                 window.alert('login failed');
             } else {
-                window.location.href = "http://www.google.com";
+                window.location.href = "7-1b.html";
             }
         }
 
@@ -37,7 +40,7 @@
 </head>
 
 <body>
-    <input id="tf1" value="t23921" type="textfield">ログイン名
+    <input id="tf1" value="" type="textfield">ログイン名
     <br>
     <input id="tf2" type="password">パスワード
     <br>
