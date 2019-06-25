@@ -8,17 +8,18 @@
         async function button1Pressed() {
             var userid = document.getElementById('tf1').value;
             var password = document.getElementById('tf2').value;
+            var sql = 'show tables;'
 
             window.localStorage.setItem('userid', userid);
             window.localStorage.setItem('password', password);
 
-            var sql = 'show tables';
             var query = {
                 db: 'creco18',
                 userid: userid,
                 password: password,
                 sql: sql
             };
+
 
             var objects = await connect(query);
             if (objects.result && objects.result === 'fail') {

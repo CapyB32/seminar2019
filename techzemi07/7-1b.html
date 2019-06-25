@@ -6,10 +6,59 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script>
         $(document).ready(init);
+        var display = setInterval(Disp, 2000);
+
+        var userid = window.localStorage.getItem('userid');
+        var password = window.localStorage.getItem('password');
+        var tweet;
+        var sql;
 
         function init() {
-            var userid = window.localStorage.getItem('userid');
             document.getElementById('result').innerHTML = 'ようこそ' + userid + 'さん';
+            Disp();
+        }
+
+        async function Disp() {
+            sql = 'select * from Tweets order by time desc;';
+            var query = {
+                db: 'creco18',
+                userid: userid,
+                password: password,
+                sql: sql
+            };
+
+            objects = await connect(query);
+
+            var text = '';
+            text = text + '<table border="1">';
+            for (var i = 0; i < objects.length; i++) {
+                text = text + '<tr>' + '<th>' + objects[i].name + '</th>' + '<th>' + objects[i].tweet + '</th>' + '<th>' + objects[i].time + '</th>' + '</tr>';
+            }
+            text = text + '</table>';
+
+            document.getElementById('result2').innerHTML = text;
+        }
+
+        async function Tweet() {
+            tweet = document.getElementById('tf').value;
+            sql = 'insert into Tweets (name, tweet, time) values("' + userid + '","' + tweet + '",now());';
+            var query = {
+                db: 'creco18',
+                userid: userid,
+                password: password,
+                sql: sql
+            };
+            var objects = await connect(query);
+            Disp();
+        }
+
+        function connect(query) {
+            return new Promise(function (resolve) {
+                $.post('http://dbkiso.si.aoyama.ac.jp/jsonapi/', query, function (data, textStatus) {
+                    var objects = JSON.parse(data);
+                    resolve(objects);
+                });
+            });
         }
 
     </script>
@@ -17,6 +66,12 @@
 
 <body>
     <p id="result"></p>
+    <br>
+    <input id="tf" type="textfield">
+    <br>
+    <button onclick="Tweet()">Tweets</button>
+    <br>
+    <p id="result2"></p>
 </body>
 
 </html>
