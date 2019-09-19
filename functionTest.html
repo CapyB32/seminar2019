@@ -3,7 +3,6 @@
 
 <head>
     <meta charset="utf-8">
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -11,18 +10,26 @@
 </body>
 
 <script>
-    var array = [1, 2, 3];
-    array.forEach(function (x) {
-        console.log(x);
-    });
+    $(document).ready(function () {
+        var array = [1, 2, 3];
+        array.forEach(function (x) {
+            console.log(x);
+        });
 
-    console.log('-------------------------------------------');
+        console.log('-------------------------------------------');
 
-    array.forEach(x);
+        array.forEach(x);
 
-    function x(x) {
-        console.log(x);
-    }
+        function x(x) {
+            console.log(x);
+        }
+
+        console.log('-------------------------------------------');
+
+        for (var i = 0; i < array.length; i++) {
+            console.log(array[i]);
+        }
+    })
 </script>
 
 </html>
