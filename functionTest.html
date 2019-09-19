@@ -10,26 +10,45 @@
 </body>
 
 <script>
-    $(document).ready(function () {
-        var array = [1, 2, 3];
-        array.forEach(function (x) {
-            console.log(x);
-        });
+    var myarray = {
+        array: [1, 2, 3],
 
-        console.log('-------------------------------------------');
+        forEach: function (func) {
+            for (var i = 0; i < this.array.length; i++) {
+                func(this.array[i]);
+            }
+        },
 
-        array.forEach(x);
-
-        function x(x) {
-            console.log(x);
+        push: function (x) {
+            this.array.push(x);
         }
+    }
 
-        console.log('-------------------------------------------');
+    // $(document).ready(function () {
+    //     var array = [1, 2, 3];
+    //     array.forEach(function (x) {
+    //         console.log(x);
+    //     });
 
-        for (var i = 0; i < array.length; i++) {
-            console.log(array[i]);
-        }
-    })
+    //     console.log('-------------------------------------------');
+
+    //     array.forEach(x);
+
+    //     function x(x) {
+    //         console.log(x);
+    //     }
+
+    //     console.log('-------------------------------------------');
+
+    //     for (var i = 0; i < array.length; i++) {
+    //         console.log(array[i]);
+    //     }
+    myarray.push(5);
+
+    myarray.forEach(function (each) {
+        console.log(each);
+    });
+    // })
 </script>
 
 </html>
